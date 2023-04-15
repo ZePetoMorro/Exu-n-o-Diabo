@@ -180,11 +180,6 @@ function gamePause(){
     }
 }
 
-//Função para Fullscreen
-/*function fs(){
-  let fsc = fullscreen();
-   fullscreen(!fsc);
-}*/
 //Funcionamento do Inimigo
 function enemy(){
      if(score>=5){
