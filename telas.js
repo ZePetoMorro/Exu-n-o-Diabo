@@ -5,22 +5,18 @@ function telaInicial(){
   background(0)
 playerVar()
   textFont(fontee)
-  
-  
+
   //Iniciar
   push()
   rectMode(CORNER)
-  gameBTN(270,180,210,60,playerV[numer].cor2,"Iniciar",270,217,28);
+gameBTN(270,180,210,60,playerV[numer].cor2,"Iniciar",270,217,28);
   push()
   rectMode(CORNER)
   translate(126,46)
   scale(0.7)
-  startIcon(450,210,playerV[numer].cor2)
-  pop()
+startIcon(450,210,playerV[numer].cor2)
   pop()
   //Opções
-  push()
-  rectMode(CORNER)
   gameBTN(270,250,210,60,playerV[numer].cor2,"Opções",270,287,28);
   push()
   rectMode(CORNER)
@@ -28,19 +24,18 @@ playerVar()
   scale(0.7)
   gearIcon(450,280,playerV[numer].cor2)
   pop()
-  pop()
   //Créditos
-  push()
-  rectMode(CORNER)
-  gameBTN(270,320,210,60,playerV[numer].cor2,"Créditos",270,357,28);
+gameBTN(270,320,210,60,playerV[numer].cor2,"Créditos",270,357,28);
   push()
   rectMode(CORNER)
   translate(126,185)
   scale(0.7)
   perfilIcon(455,210,playerV[numer].cor2)
   pop()
+  if(isMobile==true){
+        gameBTN(722.5,12.5,"FS",playerV[numer].cor2);
+      }
   pop()
-  
   push()
   strokeWeight(5)
   stroke(playerV[numer].cor6)
@@ -60,13 +55,7 @@ playerVar()
   
   pop()
   
-  if(isMobile==true){
-    push()
-    rectMode(CORNER)
-        gameBTN(722.5,12.5,playerV[numer].cor2);
-        fsIcon(722.5,12.5,playerV[numer].cor2)
-    pop()
-      }
+  
 }
   //fase 1 - tela = 1
   function phase1() {
@@ -121,17 +110,13 @@ playerVar()
         gamepad();
         push()
         rectMode(CORNER)
-        gameBTN(657.5,12.5,playerV[numer].cor2);
-        fsIcon(657.5,12.5,playerV[numer].cor2)
+gameBTN(657.5,12.5,"FS",playerV[numer].cor2);
         pop()
-        
   }   
       push()
       rectMode(CORNER)
-      gameBTN(743,12,playerV[numer].cor2)
-      menuIcon(743,12,playerV[numer].cor2)
+gameBTN(743,12,"MENU",playerV[numer].cor2)
       pop()
-    
   }  
 //Menu de Instruções - Tela = 2
   function instrucoes(){
@@ -139,10 +124,7 @@ playerVar()
     background(0)
 playerVar()
     textFont(fontee)
-    push()
-    rectMode(CORNER)
-    gameBTN(270,320,210,60,playerV[numer].cor2,"Iniciar",270,357,28);
-    pop()
+
     stroke(playerV[numer].cor6)
     strokeWeight(4)
     fill("#fff")
@@ -153,16 +135,12 @@ playerVar()
     text("TUTORIAL", 370 ,54);
     push()
     rectMode(CORNER)
-    gameBTN(732.5,77.5,playerV[numer].cor2)
-    xicon(732.5,77.5,playerV[numer].cor2)
-    pop()
+  gameBTN(270,320,210,60,playerV[numer].cor2,"Iniciar",270,357,28);
+    gameBTN(732.5,77.5,"X",playerV[numer].cor2)
     if(isMobile == true){
-      push()
-      rectMode(CORNER)
-    gameBTN(722.5,12.5,playerV[numer].cor2);
-    fsIcon(722.5,12.5,playerV[numer].cor2)
-      pop()
+gameBTN(722.5,12.5,"FS",playerV[numer].cor2);   
     }
+    pop()
     push()
           stroke(playerV[numer].cor6+"BF");
       fill(playerV[numer].cor3+"BF")
@@ -180,8 +158,7 @@ playerVar()
           pop()
           push()
           rectMode(CORNER)
-        gameBTN(566,172.5)
-      dirIcon("RGT",566,172.5)
+        gameBTN(566,172.5,"RGT")
           pop()
         push()
         stroke(playerV[numer].cor6)
@@ -205,10 +182,8 @@ playerVar()
         case 1:
         push()
           rectMode(CORNER)
-        gameBTN(566,172.5)
-      dirIcon("RGT",566,172.5)
-        gameBTN(136,172.5)
-      dirIcon("LFT",136,172.5)
+        gameBTN(566,172.5,"RGT")
+        gameBTN(136,172.5,"LFT")
           pop()
         stroke(playerV[numer].cor6)  
         fill("#fff")
@@ -252,43 +227,33 @@ text("e atirar com o espaço",375,235)
       push()
         scale(0.8)
       translate(95,90)
-        botaoG(375,255,200,60,"",0,4)
+      push()
+      rectMode(CORNER)
+      gameBTN(273.5,225,200,60)
+      pop()
       espaco(273.5,225)
         pop()
       }
-      
       scale(0.8)
       translate(95,90)
-      //Down
-      //X= 195-172.5= 22.5 --- Y= 215-195= 120
       push()
       rectMode(CORNER)
-      gameBTN(159.5,195)
-      dirIcon("UP",159.5,195)
-      //Up
-      gameBTN(159.5,245)
-      dirIcon("DWN",159.5,245)
+      
+      gameBTN(159.5,195,"UP")
+
+      gameBTN(159.5,245,"DWN")
       //Left
-      gameBTN(109.5,245)
-      //133-110.5=22.5 Y 265-245=20
-      dirIcon("LFT",109.5,245)
+      gameBTN(109.5,245,"LFT")
       //Right
-      gameBTN(209.5,245)
-      dirIcon("RGT",209.5,245)
-      pop()
-      push()
+      gameBTN(209.5,245,"RGT")
       noStroke()
       textFont(fontee)
-      push()
-      rectMode(CORNER)
       gameBTN(535,195,48,50.5,"#B5B6B4","W",535,228,28)      
       gameBTN(535,245,48,50.5,"#B5B6B4","S",535,278,28)
       gameBTN(485,245,48,50.5,"#B5B6B4","A",485,278,28)
       gameBTN(585,245,48,50.5,"#B5B6B4","D",585,278,28)
       pop()
-      
-      
-      pop()
+
     }
           
           break
@@ -302,26 +267,21 @@ text("e atirar com o espaço",375,235)
         textSize(18)
         push()
         rectMode(CORNER)
-        gameBTN(136,172.5)
-      dirIcon("LFT",136,172.5)
+        gameBTN(136,172.5,"LFT")
         pop()
           if(isMobile == true){
             textSize(18)
     text("Você pode colocar o jogo em\n tela cheia ao cliclar no botão", 340,116.5)
         push()
         rectMode(CORNER)
-        gameBTN(507.5,102.5,playerV[numer].cor2)
-        fsIcon(507.5,102.5,playerV[numer].cor2)
+       gameBTN(517.5,165,"GEAR",playerV[numer].cor2) 
+     gameBTN(507.5,102.5,"FS",playerV[numer].cor2)
         pop()
             push()
             textAlign(LEFT)
             textSize(18)
     text("É possível trocar de personagem\nno menu de opções", 205,176.5)
-            push()
-            rectMode(CORNER)
-            gameBTN(517.5,165,playerV[numer].cor2)
-            gearIcon(517.5,165,playerV[numer].cor2)
-            pop()
+
             pop()
           }else{
             textAlign(LEFT)
@@ -329,8 +289,7 @@ text("e atirar com o espaço",375,235)
     text("É possível trocar de personagem\nno menu de opções", 205,116.5)
             push()
             rectMode(CORNER)
-            gameBTN(526,97,playerV[numer].cor2)
-            gearIcon(526,97,playerV[numer].cor2)
+            gameBTN(526,97,"GEAR",playerV[numer].cor2)
             pop()
           }
           pop()
@@ -421,6 +380,9 @@ playerVar()
   playerV[numer].state="idle"
   push()
   rectMode(CORNER)
+  if(isMobile==true){
+        gameBTN(657.5,12.5,"FS",playerV[numer].cor2);
+      }
   gameBTN(270,180,210,60,playerV[numer].cor2,"Voltar",270,217,28)
   pop()
   strokeWeight(4)
@@ -434,16 +396,6 @@ playerVar()
   text("Você fez "+highScore+" pontos",375,156.5)
   text("Você fez "+highScore+" pontos",375,155)
 
-  
-  
-  if(isMobile==true){
-      push()
-      rectMode(CORNER)
-        gameBTN(657.5,12.5,playerV[numer].cor2);
-        fsIcon(657.5,12.5,playerV[numer].cor2)
-      pop()
-      }
-  
 }
 //Tela de pause/tela 4
 function telaPause(){
@@ -452,8 +404,7 @@ function telaPause(){
   highScore=score;
   background(0)
 playerVar()
-  
-  
+
   //Voltar
   push()
   rectMode(CORNER)
@@ -462,6 +413,9 @@ playerVar()
   gameBTN(270,250,210,60,playerV[numer].cor2,"Opções",270,287,28);
   //Sair
   gameBTN(270,320,210,60,playerV[numer].cor2,"Sair",270,357,28);
+  if(isMobile==true){
+ gameBTN(657.5,12.5,"FS",playerV[numer].cor2)
+      }
   pop()
   
   strokeWeight(4)
@@ -474,13 +428,6 @@ playerVar()
   textSize(20)
   text("Você tem "+score+" pontos",375,155)
 
-    if(isMobile==true){
-      push()
-      rectMode(CORNER)
-        gameBTN(657.5,12.5,playerV[numer].cor2)
-        fsIcon(657.5,12.5,playerV[numer].cor2)
-      pop()
-      }
 }
 //menu de opções Tela 5
 function menuOpcoes(){
@@ -528,19 +475,12 @@ playerVar()
   push()
   rectMode(CORNER)
   gameBTN(102.5,310,210,60,playerV[numer].cor2,"Personagens",102.5,347,26);
+  gameBTN(732.5,77.5,"X",playerV[numer].cor2)
   pop()
   pop()
-  push()
-  rectMode(CORNER)
-  gameBTN(732.5,77.5,playerV[numer].cor2)
-  xicon(732.5,77.5,playerV[numer].cor2)
-  pop()
+
     if(isMobile==true){
-      push()
-      rectMode(CORNER)
-        gameBTN(657.5,12.5,playerV[numer].cor2);
-        fsIcon(657.5,12.5,playerV[numer].cor2)
-      pop()
+
       push()
   fill("#FFF")
   stroke(playerV[numer].cor6)
@@ -559,8 +499,8 @@ playerVar()
       rect(270,127.5,90,45,5);
       push()
       rectMode(CORNER)
-      gameBTN(220,105.5)
-      soundOn(107,110)
+            
+      gameBTN(220,105.5,"SOUND")
       pop()
   }else if(mudo==true){
     stroke("rgba(1,77,3,0.75)");
@@ -569,8 +509,7 @@ playerVar()
       rect(270,127.5,90,45,5);
     push()
     rectMode(CORNER)
-    gameBTN(270,105.5)
-    mute(270,105)
+    gameBTN(270,105.5,"MUTE")
     pop()
   }
       pop()
@@ -580,8 +519,7 @@ playerVar()
   text("Tela Cheia",205,247)
   push()
   rectMode(CORNER)
-  gameBTN(316.5,212.5,playerV[numer].cor2);
-  fsIcon(316.5,212.5,playerV[numer].cor2)
+gameBTN(657.5,12.5,"FS",playerV[numer].cor2); gameBTN(316.5,212.5,"FS",playerV[numer].cor2);
   pop()
   pop()  
       push()
@@ -610,8 +548,7 @@ playerVar()
       }else{
         push()
         rectMode(CORNER)
-        gameBTN(316.5,157.5,48,50.5,playerV[numer].cor2)
-        fsIcon(316.5,157.5,playerV[numer].cor2)
+        gameBTN(316.5,157.5,"FS",playerV[numer].cor2)
         pop()
         push()
         fill("#FFF")
@@ -631,8 +568,7 @@ playerVar()
       rect(270,127.5,90,45,5);
     push()
       rectMode(CORNER)
-      gameBTN(220,105.5)
-      soundOn(107,110)
+      gameBTN(220,105.5,"SOUND")
       pop()
   }else if(mudo==true){
     stroke("rgba(1,77,3,0.75)");
@@ -641,8 +577,7 @@ playerVar()
       rect(270,127.5,90,45,5);
     push()
     rectMode(CORNER)
-    gameBTN(270,105.5)
-    mute(270,105)
+    gameBTN(270,105.5,"MUTE")
     pop()
   }
         
@@ -762,18 +697,12 @@ gameBTN(132,302,177.5,60, playerV[numer].cor2,"Selecionado",132,339,25);
   pop()
   push()
   rectMode(CORNER)
-gameBTN(732.5,77.5,playerV[numer].cor2)
-  
-  xicon(732.5,77.5,playerV[numer].cor2)
-pop()
-    if(isMobile==true){
-      push()
-      rectMode(CORNER)
-        gameBTN(657.5,12.5,playerV[numer].cor2);
-        fsIcon(657.5,12.5,playerV[numer].cor2)
-      pop()
+gameBTN(732.5,77.5,"X",playerV[numer].cor2)
+ if(isMobile==true){
+       gameBTN(657.5,12.5,"FS",playerV[numer].cor2);
       }
-  
+  pop()
+
 }
 //Créditos tela 7
   function creditos(){
@@ -786,15 +715,16 @@ playerVar()
     fill("#FFF")
     push()
     rectMode(CORNER)
-    gameBTN(732.5,77.5,playerV[numer].cor2)
-    xicon(732.5,77.5,playerV[numer].cor2)
+    gameBTN(732.5,77.5,"X",playerV[numer].cor2)
+    if(isMobile == true){
+ gameBTN(732.5,12.5,"FS",playerV[numer].cor2);
+    }
     pop()
     push()
     strokeWeight(10)
     stroke(playerV[numer].cor6)
   ellipse(220, 190, 180, 180);
   drawingContext.clip();
-    //ctx.canvasDrawingContext2D.clip();
   image(fotoMinha,130,100,180,180);
   pop()
   textSize(30)
@@ -817,13 +747,7 @@ playerVar()
     textSize(24)
     text("Prof. Aquiles Burlamaqui",540,355+1.5)
     text("Prof. Aquiles Burlamaqui",540,355)
-  if(isMobile == true){
-    push()
-    rectMode(CORNER)
-    gameBTN(732.5,12.5,playerV[numer].cor2);
-    fsIcon(732.5,12.5,playerV[numer].cor2)
-    pop()
-    }
+  
   textSize(60);
   text("CRÉDITOS", 375 ,76.5);
   text("CRÉDITOS", 375 ,75);
