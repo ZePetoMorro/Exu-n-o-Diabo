@@ -3,7 +3,10 @@ function gamePad(){
   if(tela==1){   
   if(canhoto==false){  
         if(bow==true){
-        botao(100,300)
+        push()
+          rectMode(CORNER)
+        gameBTN(77.5,277.5)
+          pop()
         flecha(77.5,277.5)
         }
         
@@ -38,7 +41,10 @@ function gamePad(){
     if(bow==true){
     push()    
     translate(600,0)
-        botao(100,300)
+      push()
+          rectMode(CORNER)
+        gameBTN(77.5,277.5)
+      pop()
         flecha(77.5,277.5)
     pop()
     }
@@ -76,7 +82,10 @@ function gamePad(){
         if(bow==true){
         push()
           translate(250,20)
-        botao(100,300)
+          push()
+          rectMode(CORNER)
+        gameBTN(77.5,277.5)
+          pop()
         flecha(77.5,277.5)
           pop()
         }
@@ -112,7 +121,10 @@ function gamePad(){
     if(bow==true){
     push()    
     translate(360,20)
-        botao(100,300)
+      push()
+          rectMode(CORNER)  
+      gameBTN(77.5,277.5)
+      pop()
         flecha(77.5,277.5)
     pop()
     }
