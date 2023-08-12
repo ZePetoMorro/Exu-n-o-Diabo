@@ -1,4 +1,32 @@
 //tela icicial - tela = 0
+function switchTelas(){
+  switch(tela){
+    case 0:
+      telaInicial()
+      break;
+    case 1:
+      phase1();
+      break;
+    case 2:
+      instrucoes();
+      break;
+    case 3:
+      gameOver();
+      break;
+    case 4:
+      telaPause();
+      break;
+    case 5:
+      menuOpcoes();
+      break;
+    case 6:
+      telaPersonagens();
+      break;
+      case 7:
+      creditos();
+  }
+}
+
 function telaInicial(){
   
   tela=0
