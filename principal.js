@@ -18,7 +18,6 @@ var vidas = 3;
 var gameOverr = false
 var numer=0
 
-
 const enemyy = { hP:70,wP:70,frameX:0,frameY:0,cutX:270,cutY:0};
 var frames=0;
 var numerF = 0;
@@ -67,10 +66,7 @@ function preload(){
   musica=loadJSON('musica.json')
 }
 function setup(){
-  //soundFormats('mp3', 'ogg');
-  //pontos=loadSound('sons/pontos.ogg',loadGGG)
-  
-  
+
   sounds = loadSound('sons/sounds.mp3',loadGGG);
   oof = loadSound('sons/ooff.mp3',loadGGG)
   cenario=loadImage('imagens/cenario.png',loadGGG)
@@ -93,13 +89,10 @@ function setup(){
   art();
   ranCC()
   musicaR()
-  //pontos.play()
 }
 
 function draw() {
-  
-  
-  //console.log(musica[nT])
+
   if(carregou==true){
     
     if(floor(pontos.currentTime())>musica[nT].fim){
@@ -109,32 +102,7 @@ function draw() {
 
        
   bg()
-  switch(tela){
-    case 0:
-      telaInicial()
-      
-      break;
-    case 1:
-      phase1();
-      break;
-    case 2:
-      instrucoes();
-      break;
-    case 3:
-      gameOver();
-      break;
-    case 4:
-      telaPause();
-      break;
-    case 5:
-      menuOpcoes();
-      break;
-    case 6:
-      telaPersonagens();
-      break;
-      case 7:
-      creditos();
-  }
+  switchTelas()
   if(gameover==true){
     gameOver();
   }
@@ -152,7 +120,6 @@ function musicaR(){
   
     pontos.play()
     pontos.jump(musica[nT].inicio)
-    //console.log("Inicio em: "+musica[nT].inicio+" Termino em: "+musica[nT].fim+" , "+nT)
 
 }
 
@@ -355,8 +322,8 @@ else
     else if(mudo==false&&colisao(310,107.5,mouseX,mouseY)&&tela==5) mudo=true
 
 
-  if(mudo==true){sounds.setVolume(0);pontos.setVolume(0)}
-  else {sounds.setVolume(1);pontos.setVolume(1)}
+  if(mudo==true){sounds.setVolume(0);pontos.setVolume(0);oof.setVolume(0)}
+  else {sounds.setVolume(1);pontos.setVolume(1);oof.setVolume(1)}
   //Confirmar personagem
 //219,327 
 if(mouseX>114&&mouseX<324&&mouseY>197&&mouseY<357&&tela==6){
